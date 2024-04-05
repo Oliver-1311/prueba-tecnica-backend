@@ -1,0 +1,8 @@
+name_sensor;value;unit;timestamp
+temperatura;100;celsius;2023-04-17T17:00:50
+temperatura;80;celsius;2023-04-17T17:05:50
+temperatura;90;celsius;2023-04-17T17:10:50
+inclinación;30;grades;2023-04-17T17:00:50
+inclinación;60;grades;2023-04-17T17:10:50
+inclinación;30;grades;2023-04-17T17:15:50
+humedad;30;g/m3;2023-04-17T17:00:50
