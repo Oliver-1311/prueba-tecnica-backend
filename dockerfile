@@ -17,4 +17,4 @@ COPY . .
 
 EXPOSE 5000
 
-CMD ["pipenv", "run", "python", "app.py"]
+CMD ["pipenv", "run", "python", "src/app.py"]

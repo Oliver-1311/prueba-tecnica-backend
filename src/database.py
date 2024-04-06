@@ -1,10 +1,10 @@
 from flask_sqlalchemy import SQLAlchemy
+import os
+from dotenv import load_dotenv
 
-host = 'localhost'
-password = 'postgres1234'
-database = 'pruebatecnica'
+load_dotenv()
 
-DATABASE_URL = f'postgresql://postgres:{password}@{host}/{database}'
+DATABASE_URL = f"postgresql://{os.getenv('DB_USER')}:{os.getenv('DB_PASSWORD')}@{os.getenv('DB_HOST')}/{os.getenv('DB_NAME')}"
 
 db = SQLAlchemy()
 
