@@ -4,12 +4,19 @@ from datetime import datetime
 from io import TextIOWrapper
 from database import db, init_db
 from helpers import allowed_file, update_summary_latest
+from flask_cors import CORS
 import csv
 
 #inicializar la app
 app = Flask(__name__)
+
+
+
 init_db(app)
- 
+  
+CORS(app)
+
+
 
 # creamos las APIS
 
@@ -75,11 +82,14 @@ def get_summary():
                 "Marca de Tiempo": item.timestamp.strftime("%Y-%m-%dT%H:%M:%S")
             })
 
-        return jsonify({"data": summary_list})
+        return jsonify( summary_list)
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
     
 
 if __name__ == '__main__':
-    app.run()
+
+    with app.app_context():
+        db.create_all()
+    app.run(host='0.0.0.0')
